@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {assets} from '../assets/assets'
 import { NavLink,Link } from 'react-router-dom'
 
@@ -61,6 +61,10 @@ const Navbar = () => {
                <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
                <p>Back</p>
             </div>
+            <NavLink className='py-2 pl-6 border' to='/' >HOME</NavLink>
+            <NavLink className='py-2 pl-6 border' to='/collection' >Collection</NavLink>
+            <NavLink className='py-2 pl-6 border' to='/about' >About</NavLink>
+            <NavLink className='py-2 pl-6 border' to='/contact' >Contact</NavLink>
         </div>
 
       </div>
