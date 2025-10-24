@@ -1,8 +1,15 @@
 import React from 'react'
+import { ShopContext } from '../context/ShopContext'
 
 const collection = () => {
+
+    const {products}= useContext(ShopContext)
+
   return (
-    <div>collection</div>
+    <div>
+
+      
+    </div>
   )
 }
 
