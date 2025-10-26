@@ -11,7 +11,7 @@ const collection = () => {
     const [showFilter, setShowFilter] = useState(false)
     const [filterProducts, setFilterProducts] = useState([])
     const [category, setCategory] = useState([])
-    const [subCategory, setSubCategory] = useState([])
+   
 
 
 
