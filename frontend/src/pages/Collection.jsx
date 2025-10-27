@@ -15,10 +15,18 @@ const collection = () => {
    
     const toggleCategory = (e)=>{
       if(category.includes(e.target.value)){
-         setCategory(pre=>ProgressEvent.filter(item=>item !== e.target.value))
+         setCategory(prev=>prev.filter(item=>item !== e.target.value))
       }
       else{
          setCategory(prev=>[...prev,e.target.value])
+      }
+    }
+    const toggleSubCategory = (e)=>{
+      if(subCategory.includes(e.target.value)){
+        setSubCategory(prev=>prev.filter(item=>item !== e.target.value))
+      }
+      else{
+         setSubCategory(prev=>[...prev,e.target.value])
       }
     }
 
