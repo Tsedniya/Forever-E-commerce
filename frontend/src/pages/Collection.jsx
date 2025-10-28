@@ -29,11 +29,11 @@ const collection = () => {
          setSubCategory(prev=>[...prev,e.target.value])
       }
     }
-
+     
     useEffect(()=>{
-      setFilterProducts(products)
-    },[])
-    
+      applyFilter()
+    },[category,subCategory])
+
     const applyFilter=()=>{
          let productsCopy = products.slice()
          if (category.length > 0){
@@ -45,10 +45,23 @@ const collection = () => {
          setFilterProducts(productsCopy)
 
     }
-    useEffect(()=>{
-      applyFilter()
-    },[category,subCategory])
+    const sortProduct = ()=>{
+         let fpCopy= filterProducts.slice();
 
+         switch(sortType){
+            case 'low-high':
+               setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
+               break;
+            case 'high-low':
+               setFilterProducts(fpCopy.sort((a,b)=>(b.price - a.price)));
+               break;
+
+            default:
+               applyFilter();
+               break;
+         }
+    }
+   
   return (
     <div className='flex flex-col sm:flex-row page-1 sm:gap-10 pt-10 border-t'>
       
