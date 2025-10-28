@@ -12,6 +12,7 @@ const collection = () => {
     const [filterProducts, setFilterProducts] = useState([])
     const [category, setCategory] = useState([])
     const [subCategory, setSubCategory]= useState([])
+    const [sortType, setSortType]= useState('relevent')
    
     const toggleCategory = (e)=>{
       if(category.includes(e.target.value)){
@@ -61,6 +62,9 @@ const collection = () => {
                break;
          }
     }
+    useEffect(()=>{
+      sortProduct();
+    },[sortType])
    
   return (
     <div className='flex flex-col sm:flex-row page-1 sm:gap-10 pt-10 border-t'>
@@ -109,7 +113,7 @@ const collection = () => {
          <div className='flex justify-between text-base sm:text-2xl mb-4'>
           <Title text1={'ALL'} text2={'COLLECTIONS'}/>
           {/*Product sort*/}
-          <select className='border-2 border-gray-300 text-sm px-2'>
+          <select onChange={(e)=> setSortType(e.target.value)}className='border-2 border-gray-300 text-sm px-2'>
             <option value="relavent">Sort by: Relevant</option>
             <option value="low-high">Sort by:Low to high</option>
             <option value= "high-low">Sort by: High to low</option>
