@@ -40,6 +40,9 @@ const collection = () => {
             productsCopy = productsCopy.filter(item=>category.includes(item.category));
          }
     }
+    useEffect(()=>{
+      applyFilter()
+    },[category,subCategory])
 
   return (
     <div className='flex flex-col sm:flex-row page-1 sm:gap-10 pt-10 border-t'>
