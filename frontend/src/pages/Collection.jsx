@@ -39,6 +39,11 @@ const collection = () => {
          if (category.length > 0){
             productsCopy = productsCopy.filter(item=>category.includes(item.category));
          }
+         if (subCategory.length > 0){
+            productsCopy = productsCopy.filter(item=>subCategory.includes(item.subCategory));
+         }
+         setFilterProducts(productsCopy)
+
     }
     useEffect(()=>{
       applyFilter()
